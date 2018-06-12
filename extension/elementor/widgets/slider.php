@@ -23,7 +23,7 @@ class adammobile_widget_slides extends Widget_Base {
     }
 
     public function get_script_depends() {
-        return ['owl-carousel'];
+        return ['owl-carousel', 'element-custom'];
     }
 
     protected function _register_controls() {

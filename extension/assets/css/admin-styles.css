@@ -325,6 +325,3 @@
 .fie_css_custom fieldset p:last-child {
     margin-bottom: 0;
 }
-.owl-carousel .owl-stage-outer {
-    height: auto !important;
-}

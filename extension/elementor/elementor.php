@@ -18,6 +18,8 @@ class adammobile_plugin_elementor_widgets {
 
         add_action( 'elementor/preview/enqueue_styles', [$this, 'adammobile_elementor_style_preview']);
 
+        add_action('elementor/frontend/after_register_scripts', array($this, 'register_frontend_scripts'));
+
     }
 
     public function adammobile_elementor_widgets_registered() {
@@ -30,6 +32,12 @@ class adammobile_plugin_elementor_widgets {
 
     public function adammobile_elementor_style_preview() {
         wp_enqueue_style( 'adammobile-admin-styles', get_theme_file_uri( '/extension/assets/css/admin-styles.css' ) );
+    }
+
+    public function register_frontend_scripts() {
+
+
+
     }
 
     private function adammobile_elementor_includes() {

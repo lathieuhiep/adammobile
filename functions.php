@@ -234,6 +234,7 @@ function adammobile_register_front_end() {
     }
 
     wp_enqueue_script( 'adammobile-custom', get_theme_file_uri( '/js/custom.js' ), array(), '1.0.0', true );
+    wp_register_script( 'element-custom', get_theme_file_uri( '/js/element-custom.js' ), array(), '1.0.0', true );
 
     /*
    * End Get Js Front End
