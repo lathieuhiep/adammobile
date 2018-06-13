@@ -95,15 +95,54 @@ class adammobile_widget_slides extends Widget_Base {
 
         $this->end_controls_section();
 
+        $this->start_controls_section(
+            'section_setting_slider',
+            [
+                'label' => esc_html__( 'Setting Slider', 'adammobile' ),
+                'tab' => Controls_Manager::TAB_SETTINGS
+            ]
+        );
+
+        $this->add_control(
+            'loop',
+            [
+                'type'          =>  Controls_Manager::SWITCHER,
+                'label'         =>  esc_html__('Loop Slider ?', 'adammobile'),
+                'label_off'     =>  esc_html__('No', 'adammobile'),
+                'label_on'      =>  esc_html__('Yes', 'adammobile'),
+                'return_value'  =>  'yes',
+                'default'       =>  'no',
+            ]
+        );
+
+        $this->add_control(
+            'autoplay',
+            [
+                'label'         => esc_html__('Autoplay?', 'adammobile'),
+                'type'          => Controls_Manager::SWITCHER,
+                'label_off'     => esc_html__('No', 'adammobile'),
+                'label_on'      => esc_html__('Yes', 'adammobile'),
+                'return_value'  => 'yes',
+                'default'       => 'no',
+            ]
+        );
+
+        $this->end_controls_section();
+
     }
 
     protected function render() {
 
         $adammobile_element_settings  =   $this->get_settings_for_display();
 
+        $adammobile_slider_settings     =   [
+            'loop'                  =>  ( 'yes' === $adammobile_element_settings['loop'] ),
+            'autoplay'              =>  ( 'yes' === $adammobile_element_settings['autoplay'] ),
+        ];
+
 ?>
 
-      <div class="element-slides owl-carousel owl-theme">
+      <div class="element-slides owl-carousel owl-theme" data-settings='<?php echo esc_attr( wp_json_encode( $adammobile_slider_settings ) ); ?>'>
 
         <?php
         foreach ( $adammobile_element_settings['slides-list'] as $adammobile_slides_list_item ) :
