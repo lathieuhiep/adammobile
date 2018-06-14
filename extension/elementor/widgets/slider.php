@@ -136,8 +136,8 @@ class adammobile_widget_slides extends Widget_Base {
         $adammobile_element_settings  =   $this->get_settings_for_display();
 
         $adammobile_slider_settings     =   [
-            'loop'                  =>  ( 'yes' === $adammobile_element_settings['loop'] ),
-            'autoplay'              =>  ( 'yes' === $adammobile_element_settings['autoplay'] ),
+            'loop'      =>  ( 'yes' === $adammobile_element_settings['loop'] ),
+            'autoplay'  =>  ( 'yes' === $adammobile_element_settings['autoplay'] ),
         ];
 
 ?>

@@ -3,9 +3,10 @@
  * Copyright 2017-2020
  * Licensed under  ()
  */
-"use strict";
 
 ( function( $ ) {
+
+    "use strict";
 
     let timer_clear;
 
